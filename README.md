@@ -1,49 +1,69 @@
-# IoT Attendance System 🌐
+# Project Title: IoT Attendance System Simulator
 
-## Description
+## Objective
+This project simulates an IoT Attendance System that logs attendance when an RFID card is scanned.  
+It uses a Python Tkinter GUI to mimic card scanning, attendance logging, and banned card alerts without requiring hardware.
 
-The IoT Attendance System is here to make tracking attendance at Creative a breeze! 🚀 We’ve hooked up an RFID scanner with a Wi-Fi module to read ID cards and send the data straight to a [Google Sheet](https://docs.google.com/spreadsheets/d/1Of4h9LQfTOir4lgUNRSC3x5Ne8-ZmxXV87v4c2R3oTU/edit?usp=sharing). The system features LEDs, a buzzer for alerts, and email notifications for banned individuals. 📧 Plus, there’s an MIT app that lets managers log in, see who’s around in real time, and search through attendance history. 📱
+> Example: Tracks attendance for students or employees using simulated RFID scans with a GUI interface.
 
-## How It Works
+---
 
-1. **RFID Scanning**: Employees swipe their ID cards in front of the RFID sensor. 🆔
-   - The NodeMCU uploads the card data to the Google Sheet. 📊
-   - It also sends serial messages to the Arduino Uno to handle different scenarios (employee, manager, or banned). 🛠️
+## Tools & Technologies
+- **Programming Language**: Python 3.x
+- **Frameworks**: Tkinter
+- **Simulator**: Custom GUI
+- **Dependencies**: Listed in `requirements.txt`
 
-2. **LED and Buzzer Alerts**:
-   - **Employees/Managers**: Green LEDs flash one by one until the LCD shows their name. 💚🔆
-   - **Banned Individuals**: Red LED blinks, buzzer sounds, LCD displays "ALERT! Intruder detected!", and an email is sent to all employees with the banned person’s ID. 🚨🔴📧
+---
 
-3. **MIT App**:
-   - Pulls data from the Google Sheet and displays it. 📈
-   - **Login**: Only the manager can log in (Username: `nora`, Password: `1234`). 🔐
-   - **Features**:
-     - Shows who’s in the building and alerts if an intruder is detected. 🏢👀
-     - Displays a history log with details (ID, Name, Age, Date, Time) and lets you search for specific employee records. 📜🔍
+## Setup Instructions
 
-## Components Used
+### 1. Clone the Repository
 
-- LCD I2C 🖥️
-- RFID Sensor 🏷️
-- LEDs 💡
-- Arduino Uno 🎛️
-- NodeMCU ESP8266 🌐
-- Buzzer 🔔
-- Jumper Wires and Resistors 🔧
+git clone https://github.com/marthanjoel/IoT-Attendance-System.git
+cd IoT-Attendance-System
+2. Create Virtual Environment
+bash
+Copy code
+python3 -m venv venv
+source venv/bin/activate
+3. Install Dependencies
+bash
+Copy code
+pip install -r requirements.txt
+4. Run the Project
+bash
+Copy code
+python3 main.py
+Simulation Details
+Sensor Emulated: RFID card scanner (simulated)
 
-## Resources
+Actuator Emulated: GUI listbox displaying logs, alert labels for banned users
 
-- [MIT Application](https://gallery.appinventor.mit.edu/?galleryid=1d3281aa-b03f-4b87-83bc-aff6551f3e31) 📲
-- **Arduino Code**: Check out the repo 📁
-- **NodeMCU Code**: Check out the repo 📁
-- **Photos and Video**: Also in the repo 📸🎥
+Trigger Logic: Clicking "Scan Card" randomly selects a card; banned cards trigger red alerts while allowed cards log attendance with timestamp.
 
-## Installation and Setup
+Screenshots
+Screenshot 1: <img width="739" height="733" alt="Screenshot from 2025-09-18 04-23-28" src="https://github.com/user-attachments/assets/4280b215-526e-466d-bf4e-1ef478205b17" />
 
-1. **Hardware Setup**: Connect everything according to the schematics. 🛠️
-2. **Software Configuration**:
-   - Upload the Arduino and NodeMCU code to your boards. 📤
-   - Set up the Google Sheet and SMTP settings as needed. ⚙️
-   - Install the MIT App and log in with the manager credentials. 📲🔑
 
-Enjoy managing attendance with style! 🎉
+Screenshot 2:<img width="739" height="733" alt="Screenshot from 2025-09-18 04-25-55" src="https://github.com/user-attachments/assets/5853446a-c566-40ed-93e0-ffc1e7e7130d" />
+ 
+
+Screenshot 3: <img width="739" height="733" alt="Screenshot from 2025-09-18 04-25-18" src="https://github.com/user-attachments/assets/4ff86ac8-8323-4ad8-bdad-ec39f79b1af0" />
+
+
+Observations
+Worked well: GUI loads correctly, attendance logs appear in real-time.
+
+Bugs/Challenges: Random card selection may repeat users; can be extended to prevent duplicates.
+
+Validation: Simulation verified by scanning multiple cards and checking logs and alert behavior.
+
+Future Improvements
+Export attendance logs to CSV
+
+Integrate LED/buzzer simulation in GUI
+
+Add multiple banned card detection
+
+Integrate cloud logging or Google Sheets connectivity
