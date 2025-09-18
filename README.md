@@ -42,6 +42,9 @@ Actuator Emulated: GUI listbox displaying logs, alert labels for banned users
 
 Trigger Logic: Clicking "Scan Card" randomly selects a card; banned cards trigger red alerts while allowed cards log attendance with timestamp.
 
+
+
+---
 Screenshots
 Screenshot 1: <img width="739" height="733" alt="Screenshot from 2025-09-18 04-23-28" src="https://github.com/user-attachments/assets/4280b215-526e-466d-bf4e-1ef478205b17" />
 
@@ -50,7 +53,7 @@ Screenshot 2:<img width="739" height="733" alt="Screenshot from 2025-09-18 04-25
  
 
 Screenshot 3: <img width="739" height="733" alt="Screenshot from 2025-09-18 04-25-18" src="https://github.com/user-attachments/assets/4ff86ac8-8323-4ad8-bdad-ec39f79b1af0" />
-
+---
 
 Observations
 Worked well: GUI loads correctly, attendance logs appear in real-time.
@@ -59,6 +62,10 @@ Bugs/Challenges: Random card selection may repeat users; can be extended to prev
 
 Validation: Simulation verified by scanning multiple cards and checking logs and alert behavior.
 
+
+
+
+--
 Future Improvements
 Export attendance logs to CSV
 
