@@ -62,9 +62,6 @@ Bugs/Challenges: Random card selection may repeat users; can be extended to prev
 
 Validation: Simulation verified by scanning multiple cards and checking logs and alert behavior.
 
-
-
-
 --
 Future Improvements
 Export attendance logs to CSV
